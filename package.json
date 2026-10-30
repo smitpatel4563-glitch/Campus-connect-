@@ -1,0 +1,11 @@
+{
+  "name": "campusconnect",
+  "version": "1.0.0",
+  "description": "Smart Campus Management System - GitLab CI/CD Project",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node tests/validation.test.js"
+  },
+  "author": "Deral Modi",
+  "license": "ISC"
+}

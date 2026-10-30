@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Smart Campus Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">CampusConnect</div>
+        <div class="user-role">Student Dashboard</div>
+    </header>
+
+    <main class="container">
+        <!-- Dashboard Summary Stats -->
+        <section class="stats-grid">
+            <div class="card stat-card">
+                <h3>Notices</h3>
+                <p class="stat-number">04 <span class="stat-label">new</span></p>
+            </div>
+            <div class="card stat-card">
+                <h3>Events</h3>
+                <p class="stat-number">02 <span class="stat-label">upcoming</span></p>
+            </div>
+            <div class="card stat-card">
+                <h3>Requests</h3>
+                <p class="stat-number">01 <span class="stat-label">pending</span></p>
+            </div>
+        </section>
+
+        <!-- Updates Banner -->
+        <section class="card updates-banner">
+            <h3>Latest Campus Updates</h3>
+            <ul>
+                <li>Library timing extended this week</li>
+                <li>Technical club registration is open</li>
+                <li>Maintenance request status: In review</li>
+            </ul>
+        </section>
+
+        <!-- Notice Board Section -->
+        <section class="card">
+            <h2>Campus Notice Board</h2>
+            <div class="filter-controls">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter" onchange="filterNotices()">
+                    <option value="all">All Categories</option>
+                    <option value="academic">Academic</option>
+                    <option value="events">Events</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+            </div>
+            <div id="noticeList" class="notice-list">
+                <div class="notice-item" data-category="academic">
+                    <span class="tag academic">Academic</span>
+                    <h4>Mid-Semester Examination Schedule</h4>
+                    <p>The revised exam timetable for CE department is now live.</p>
+                </div>
+                <div class="notice-item" data-category="events">
+                    <span class="tag events">Events</span>
+                    <h4>Annual TechFest 2026 Registration</h4>
+                    <p>Register your team for hackathons and coding challenges.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Request Form -->
+        <section class="card">
+            <h2>Submit Student Service Request</h2>
+            <form id="requestForm" onsubmit="handleRequestSubmit(event)">
+                <div class="form-group">
+                    <label for="requestCategory">Category *</label>
+                    <select id="requestCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="IT Support">IT Support</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Academics">Academics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="requestDescription">Description (Min 10 characters) *</label>
+                    <textarea id="requestDescription" rows="4" placeholder="Describe your request in detail..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Request</button>
+            </form>
+            <div id="formFeedback" class="feedback"></div>
+        </section>
+    </main>
+
+    <script src="js/validation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
